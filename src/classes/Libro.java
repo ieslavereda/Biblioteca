@@ -26,8 +26,8 @@ public class Libro implements Comparable{
 
 	@Override
 	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
+		Libro l = (Libro)o;
+		return titulo.compareToIgnoreCase(l.getTitulo());
 	}
 	
 	
