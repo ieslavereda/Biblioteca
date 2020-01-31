@@ -122,7 +122,7 @@ public class Lista {
 		Node aux = head;
 
 		while (aux != null) {
-			salida += aux + " ";
+			salida += aux + "\n";
 			aux = aux.getSiguiente();
 		}
 

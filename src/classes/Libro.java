@@ -30,6 +30,4 @@ public class Libro implements Comparable{
 		return titulo.compareToIgnoreCase(l.getTitulo());
 	}
 	
-	
-	
 }
