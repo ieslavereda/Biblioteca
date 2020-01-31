@@ -10,6 +10,11 @@ public class Libro implements Comparable{
 		this.titulo = titulo;
 		this.autor = autor;
 	}
+	public Libro(String titulo) {
+		super();
+		this.titulo = titulo;
+		this.autor = "";
+	}
 
 	public String getTitulo() {
 		return titulo;

@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Arrays;
+
 public class Lista {
 
 	private int size;
@@ -46,6 +48,20 @@ public class Lista {
 		}
 
 		return encontrado;
+	}
+	
+	public Libro getBook(String titulo) {
+		
+		Libro libro=null;
+		Node aux = head;
+		
+		while(aux!=null && libro==null) {
+			if(aux.getInfo().getTitulo().compareToIgnoreCase(titulo)==0)
+				libro=aux.getInfo();
+			aux=aux.getSiguiente();
+		}
+		
+		return libro;
 	}
 
 	public Libro getHead() {
@@ -97,7 +113,7 @@ public class Lista {
 				return false;
 			}				
 		}else {
-			if(head.getInfo()==libro) {
+			if(head.getInfo().compareTo(libro)==0) {
 				head=head.getSiguiente();
 				size--;
 				return true;
@@ -114,6 +130,20 @@ public class Lista {
 				}
 			}			
 		}
+	}
+
+	public void sort() {
+		
+		Libro[] array = new Libro[size];
+		
+		for(int i=0;i<array.length;i++)
+			array[i]=getHead();
+		
+		Arrays.sort(array);
+		
+		for(int i=0;i<array.length;i++)
+			addElementTail(array[i]);
+		
 	}
 
 	public String toString() {
